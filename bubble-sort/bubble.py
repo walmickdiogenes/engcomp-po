@@ -2,7 +2,7 @@ from random import randint
 import matplotlib as mpl
 import timeit
 
-tamlista = [10000, 20000, 30000, 40000, 50000]
+tamlista = [10, 20, 30, 40, 50]
 def geraLista(tam):
     lista = []
     for i in range(tam):
