@@ -3,14 +3,14 @@ import matplotlib as mpl
 import itertools as it
 import timeit
 
-#tamlista = [10, 20, 30, 40, 50]
 tamlista = (list(it.permutations(range(4))))
-def geraLista(tam):
+
+'''def geraLista(tam):
     lista = []
     while len(lista) < tam:
         n = randint(1,1*tam)
         if n not in lista: lista.append(n)
-    return lista
+    return lista'''
 
 def selection(lista):
     for i in range(0, len(lista) - 1):
@@ -36,4 +36,3 @@ def desenhaGrafico(x,y,ym,yp,xl = "Tamanho", yl = "Tempo"):
     plt.xlabel(xl)
     fig.savefig('graph2.png')
 
-print(tamlista)
