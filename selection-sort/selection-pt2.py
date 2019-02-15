@@ -3,7 +3,7 @@ import matplotlib as mpl
 import itertools as it
 import timeit
 
-tamlista = (list(it.permutations(range(4))))
+permutacao = (list(it.permutations(range(6))))
 
 '''def geraLista(tam):
     lista = []
@@ -23,16 +23,17 @@ def selection(lista):
         lista[i] = aux
     return lista
 
-mpl.use('Agg')
-import matplotlib.pyplot as plt
-def desenhaGrafico(x,y,ym,yp,xl = "Tamanho", yl = "Tempo"):
-    fig = plt.figure(figsize=(10, 8))
-    ax = fig.add_subplot(111)
-    ax.plot(x,y, label = "Melhor Tempo")
-    ax.plot(x,ym, label = "Medio Tempo")
-    ax.plot(x,yp, label = "Pior Tempo")
-    ax.legend(bbox_to_anchor=(1, 1),bbox_transform=plt.gcf().transFigure)
-    plt.ylabel(yl)
-    plt.xlabel(xl)
-    fig.savefig('graph2.png')
+tempo = []
 
+for i in permutacao:
+    permuta = list(i)
+    tempo.append(timeit.timeit("selection({})".format(permuta),setup="from __main__ import selection",number=1))
+
+
+melhorTempo = tempo.index(min(tempo))
+piorTempo = tempo.index(max(tempo))
+
+print(min(tempo))
+print(permutacao[melhorTempo])
+print(max(tempo))
+print(permutacao[piorTempo])
