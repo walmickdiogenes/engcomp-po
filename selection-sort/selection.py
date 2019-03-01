@@ -1,11 +1,14 @@
+#Walmick Diógenes Nogueira de Queirós
+
 from random import randint
 import matplotlib as mpl
+import itertools as it
 import timeit
 
 tamlista = [10000, 20000, 30000, 40000, 50000]
 def geraLista(tam):
     lista = []
-    for i in range(tam):
+    while len(lista) < tam:
         n = randint(1,1*tam)
         if n not in lista: lista.append(n)
     return lista

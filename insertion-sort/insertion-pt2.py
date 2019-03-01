@@ -1,3 +1,5 @@
+#Walmick Diógenes Nogueira de Queirós
+
 from random import randint
 import matplotlib as mpl
 import itertools as it
