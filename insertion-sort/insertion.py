@@ -47,6 +47,4 @@ for i in tamlista:
   piorTempo.append(timeit.timeit("insertionSort({})".format(pior),setup="from __main__ import insertionSort",number=1))
   medioTempo.append(timeit.timeit("insertionSort({})".format(medio),setup="from __main__ import insertionSort",number=1))
 
-
-
 desenhaGrafico(tamlista,melhorTempo, piorTempo, medioTempo)
