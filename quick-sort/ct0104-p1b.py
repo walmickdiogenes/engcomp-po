@@ -1,5 +1,6 @@
 # Walmick Diógenes Nogueira de Queirós
 
+#Gerar também séries invertidas de 200000 400000 600000 800000 e 1000000 de números e plotar o gráfico do tempo.
 
 from random import randint
 import matplotlib as mpl

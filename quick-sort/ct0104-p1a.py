@@ -1,5 +1,6 @@
 # Walmick Diógenes Nogueira de Queirós
 
+#Gerar series de 10000 a 50000 números e plotar gráficos com o melhor, médio e pior caso.
 
 from random import randint
 import matplotlib as mpl

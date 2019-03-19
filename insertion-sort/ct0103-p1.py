@@ -1,8 +1,9 @@
 #Walmick Diógenes Nogueira de Queirós
 
+#Gerar series de 10000 a 50000 números e plotar gráficos com o melhor, médio e pior caso.
+
 from random import randint
 import matplotlib as mpl
-import itertools as it
 import timeit
 
 tamlista = [10000, 20000, 30000, 40000, 50000]
@@ -13,16 +14,14 @@ def geraLista(tam):
         if n not in lista: lista.append(n)
     return lista
 
-def selection(lista):
-    for i in range(0, len(lista) - 1):
-        min = i
-        for j in range(i + 1, len(lista)):
-            if (lista[j] < lista[min]):
-                min = j
-        aux = lista[min]
-        lista[min] = lista[i]
-        lista[i] = aux
-    return lista
+def insertionSort(alist):
+   for i in range(1,len(alist)):
+       current = alist[i]
+       while i>0 and alist[i-1]>current:
+            alist[i] = alist[i-1]
+            i = i-1
+            alist[i] = current
+   return alist
 
 mpl.use('Agg')
 import matplotlib.pyplot as plt
@@ -46,12 +45,8 @@ for i in tamlista:
   melhor = sorted(medio)
   pior = sorted(medio, reverse=True)
 
-  melhorTempo.append(timeit.timeit("selection({})".format(melhor),setup="from __main__ import selection",number=1))
-  piorTempo.append(timeit.timeit("selection({})".format(pior),setup="from __main__ import selection",number=1))
-  medioTempo.append(timeit.timeit("selection({})".format(medio),setup="from __main__ import selection",number=1))
-
-
+  melhorTempo.append(timeit.timeit("insertionSort({})".format(melhor),setup="from __main__ import insertionSort",number=1))
+  piorTempo.append(timeit.timeit("insertionSort({})".format(pior),setup="from __main__ import insertionSort",number=1))
+  medioTempo.append(timeit.timeit("insertionSort({})".format(medio),setup="from __main__ import insertionSort",number=1))
 
 desenhaGrafico(tamlista,melhorTempo, piorTempo, medioTempo)
-
-
