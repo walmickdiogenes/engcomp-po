@@ -38,13 +38,13 @@ def desenhaGrafico(x,y,ym,yp,xl = "Tamanho", yl = "Tempo"):
     ax.legend(bbox_to_anchor=(1, 1),bbox_transform=plt.gcf().transFigure)
     plt.ylabel(yl)
     plt.xlabel(xl)
-    fig.savefig('merge-graph.png')
+    fig.savefig('couting-graph.png')
 
 melhorTempo = []
 piorTempo = []
 medioTempo = []
 
-'''for i in tamlista:
+for i in tamlista:
   medio = geraLista(i)
   melhor = sorted(medio)
   pior = sorted(medio, reverse=True)
@@ -53,7 +53,7 @@ medioTempo = []
   piorTempo.append(timeit.timeit("countingSort({})".format(pior), setup="from __main__ import countingSort", number=1))
   medioTempo.append(timeit.timeit("countingSort({})".format(medio), setup="from __main__ import countingSort", number=1))
 
-desenhaGrafico(tamlista, melhorTempo, piorTempo, medioTempo)'''
+desenhaGrafico(tamlista, melhorTempo, piorTempo, medioTempo)
 
-lista = [28, 5, 19, 98, 20]
-print (countingSort(lista))
+'''lista = [28, 5, 19, 98, 20]
+print (countingSort(lista)'''
